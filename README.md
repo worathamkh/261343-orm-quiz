@@ -6,6 +6,12 @@
 
 2. Run database migration and seeding
 
+# Start local web server
+
+```
+php -S localhost:8080 -t public
+```
+
 ```
 php composer.phar run-script db-setup
 ```
