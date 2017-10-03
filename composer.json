@@ -28,7 +28,8 @@
     "scripts": {
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""
-        ]
+        ],
+        "db-setup": "php artisan migrate:refresh --seed"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
