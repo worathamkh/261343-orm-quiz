@@ -6,15 +6,17 @@
 
 2. Run database migration and seeding
 
+```
+php composer.phar run-script db-setup
+```
+
 # Start local web server
 
 ```
 php -S localhost:8080 -t public
 ```
 
-```
-php composer.phar run-script db-setup
-```
+---
 
 ณ ภาควิชา Data Science and Analytics ของมหาวิทยาลัยแห่งหนึ่ง หัวหน้าภาควิชาผู้รักการวิ่งและแสนใจดีซื้อตู้เก็บของให้นักศึกษาได้ใช้เก็บหนังสือเรียน นักศึกษาแต่ละคนจะมีตู้เก็บของของตัวเองคนละ 1 ตู้และไม่มีการใช้ตู้เก็บของร่วมกัน
 
