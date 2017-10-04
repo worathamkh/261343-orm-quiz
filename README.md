@@ -22,7 +22,7 @@ php -S localhost:8080 -t public
 
 ซอล นักวิชาการคอมพิวเตอร์ต้องทำรายงาน 2 ชุด ได้แก่ 1) รายชื่อนักศึกษาทั้งหมดในระบบ และ 2) รายการตู้เก็บของพร้อมรหัสและชื่อต้นของนักศึกษาผู้เป็นเจ้าของ 
 
-จากตารางข้อมูล students, lockers จงเติมคำตอบในช่องว่าง (1-5) ใน [A-C]
+จากตารางข้อมูล students, lockers จงเติมคำตอบในช่องว่าง (1-7) ใน [A-C]
 
 ## Tables
 
@@ -47,63 +47,63 @@ php -S localhost:8080 -t public
 
 ### Snippets
 
-**[A]**
+**[A] app\Models\Student.php**
 
 ```php
 <?php
 
 class Student
 {
-  function locker()
-  {
-    return $this->___(1)___;
-  }
+    function locker()
+    {
+        return $this->___1___;
+    }
 }
+```
+
+**[B] app\Models\Lockers.php**
+
+```php
+<?php
 
 Class Locker
 {
-  function owner()
-  {
-    return $this->___(2)___;
-  }
+    function student()
+    {
+      return $this->___2___;
+    }
 }
 ```
 
-**[B]**
+**[C] routes/web.php**
 
 ```php
-<?php
+$router->get('/reports/students', function () {
+    // FIXME
+    $students = App\Models\Student::___3___;
+    
+    // print header
+    echo "student_id,first_name,last_name<br>";
 
-// Print student list in csv format
+    foreach ($students as $student) {
+        echo "$student->id,$student->first_name,$student->last_name<br>";
+    }
+});
 
-// Print csv header
-echo "student_id,first_name,last_name\n";
+$router->get('/reports/lockers', function () {
+    // FIXME
+    $lockers = App\Models\Locker::___4___;
 
-$students = Student::___(3)___;
+    // print header
+    echo "locker_id,student_id,student_first_name<br>";
 
-foreach ($students as $student)
-{
-  echo "$student->id,$student->first_name,$student_lastname\n";
-}
-```
-
-**[C]**
-
-```php
-<?php
-
-// Print locker list in csv format
-
-// Print csv header
-echo "locker_id,student_id,student_first_name\n";
-
-$lockers = Locker::___(4)___;
-
-foreach ($lockers as $locker)
-{
-  $student = $locker->___(5)___;
-  echo "$locker->id,$student->id,$student->first_name\n";
-}
+    foreach ($lockers as $locker) {
+        // FIXME
+        $student = $locker->___5___;
+        // FIXME
+        echo "$locker->id,{$student->___6___},{$student->___7___}<br>";
+    }
+});
 ```
 
 ## References

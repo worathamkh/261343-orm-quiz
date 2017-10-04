@@ -25,16 +25,16 @@ $router->get('/reports/students', function () {
 
 $router->get('/reports/lockers', function () {
     // FIXME
-    $lockers = App\Models\Locker::all();
+    $lockers = App\Models\Locker::___4___;
 
     // print header
     echo "locker_id,student_id,student_first_name<br>";
 
     foreach ($lockers as $locker) {
         // FIXME
-        $student = $locker->___4___;
+        $student = $locker->___5___;
         // FIXME
-        echo "$locker->id,{$student->___5___},{$student->___6___}<br>";
+        echo "$locker->id,{$student->___6___},{$student->___7___}<br>";
     }
 });
 
