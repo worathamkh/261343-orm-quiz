@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    function locker()
+    public $incrementing = false;
+
+    public function locker()
     {
-        // TODO implement this
-        // return $this->;
+        // FIXME
+        // Hint: return $this->relationType('App\Models\Classname');
+        return $this->___1___;
     }
 }
