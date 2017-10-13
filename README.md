@@ -4,7 +4,15 @@
 
 1. Create a new database named `orm_quiz`
 
-2. Run database migration and seeding
+2. Copy `.env.example` to `.env`
+
+3. Install dependencies
+
+```
+php composer.phar install
+```
+
+4. Run database migration and seeding
 
 ```
 php composer.phar run-script db-setup
