@@ -11,7 +11,7 @@ class Student extends Model
     public function locker()
     {
         // FIXME 3
-        return $this->___3___;
+        return $this->___3___('App\__?__');
     }
 
     public function adviser()
