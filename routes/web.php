@@ -59,10 +59,10 @@ $router->get('/reports/advisers', function () {
 
         foreach ($students as $student) {
             // FIXME 16
-            echo "$adviser->id,$adviser->first_name,$adviser->last_name,$student->___16___<br>"
+            echo "$adviser->id,$adviser->first_name,$adviser->last_name,$student->___16___<br>";
         }
     }
-})
+});
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
