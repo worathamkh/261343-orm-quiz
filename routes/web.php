@@ -20,7 +20,7 @@ $router->get('/reports/students', function () {
     $students = Student::___5___();
     
     // print header
-    echo "student_id,first_name,last_name<br>,adviser_id,adviser_first_name,adviser_last_name";
+    echo "student_id,first_name,last_name,adviser_id,adviser_first_name,adviser_last_name<br>";
     
         foreach ($students as $student) {
             // FIXME 6
