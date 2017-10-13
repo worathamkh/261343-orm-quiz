@@ -14,17 +14,20 @@ class StudentsTableSeeder extends Seeder
         DB::table('students')->insert([
             'id' => '612313001',
             'first_name' => 'John',
-            'last_name' => 'Doe'
+            'last_name' => 'Doe',
+            'adviser_id' => 'FG01'
         ]);
         DB::table('students')->insert([
             'id' => '612313002',
             'first_name' => 'Jane',
-            'last_name' => 'Doe'
+            'last_name' => 'Doe',
+            'adviser_id' => 'FG01'
         ]);
         DB::table('students')->insert([
             'id' => '612313003',
             'first_name' => 'Abe',
-            'last_name' => 'Takakazu'
+            'last_name' => 'Takakazu',
+            'adviser_id' => 'FG02'
         ]);
     }
 }

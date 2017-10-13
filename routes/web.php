@@ -1,5 +1,9 @@
 <?php
 
+use App\Student;
+use App\Adviser;
+use App\Locker;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,31 +16,53 @@
 */
 
 $router->get('/reports/students', function () {
-    // FIXME
-    $students = App\Models\Student::___3___;
+    // FIXME 5
+    $students = Student::___5___();
     
     // print header
-    echo "student_id,first_name,last_name<br>";
-
-    foreach ($students as $student) {
-        echo "$student->id,$student->first_name,$student->last_name<br>";
-    }
+    echo "student_id,first_name,last_name<br>,adviser_id,adviser_first_name,adviser_last_name";
+    
+        foreach ($students as $student) {
+            // FIXME 6
+            $adviser = $student->___6___;
+    
+            // FIXME 7-9
+            echo "$student->id,$student->first_name,$student->last_name,$adviser->___7___,$adviser->___8___,$adviser->___9___<br>";
+        }
 });
 
 $router->get('/reports/lockers', function () {
-    // FIXME
-    $lockers = App\Models\Locker::___4___;
+    // FIXME 10
+    $lockers = Locker::___10___();
 
     // print header
     echo "locker_id,student_id,student_first_name<br>";
 
     foreach ($lockers as $locker) {
-        // FIXME
-        $student = $locker->___5___;
-        // FIXME
-        echo "$locker->id,{$student->___6___},{$student->___7___}<br>";
+        // FIXME 11
+        $student = $locker->___11___;
+        // FIXME 12-13
+        echo "$locker->id,{$student->___12___},{$student->___13___}<br>";
     }
 });
+
+$router->get('/reports/advisers', function () {
+    // FIXME 14
+    $advisers = Adviser::___14___();
+
+    // print header
+    echo "adviser_id,adviser_first_name,adviser_last_name,student_id<br>";
+
+    foreach ($advisers as $adviser) {
+        // FIXME 15
+        $students = $adviser->___15___;
+
+        foreach ($students as $student) {
+            // FIXME 16
+            echo "$adviser->id,$adviser->first_name,$adviser->last_name,$student->___16___<br>"
+        }
+    }
+})
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
