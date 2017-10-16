@@ -47,11 +47,11 @@ php -S localhost:8080 -t public
 
 **students**
 
-|    id     | first_name | last_name |
-|-----------|------------|-----------|
-| 612313001 | John       | Doe       |
-| 612313002 | Jane       | Doe       |
-| 612313003 | Abe        | Takakazu  |
+|    id     | first_name | last_name | adviser_id |
+|-----------|------------|-----------|------------|
+| 612313001 | John       | Doe       | FG01       |
+| 612313002 | Jane       | Doe       | FG01       |
+| 612313003 | Abe        | Takakazu  | FG02       |
 
 
 **lockers**
