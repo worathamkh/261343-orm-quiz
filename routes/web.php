@@ -16,50 +16,50 @@ use App\Locker;
 */
 
 $router->get('/reports/students', function () {
-    // FIXME 5
-    $students = Student::___5___();
+    // FIXME 5 DONE
+    $students = Student::all();
     
     // print header
     echo "student_id,first_name,last_name,adviser_id,adviser_first_name,adviser_last_name<br>";
     
         foreach ($students as $student) {
-            // FIXME 6
-            $adviser = $student->___6___;
+            // FIXME 6 DONE
+            $adviser = $student->adviser;
     
-            // FIXME 7-9
-            echo "$student->id,$student->first_name,$student->last_name,$adviser->___7___,$adviser->___8___,$adviser->___9___<br>";
+            // FIXME 7-9 DONE
+            echo "$student->id,$student->first_name,$student->last_name,$adviser->id,$adviser->first_name,$adviser->last_name<br>";
         }
 });
 
 $router->get('/reports/lockers', function () {
-    // FIXME 10
-    $lockers = Locker::___10___();
+    // FIXME 10 DONE
+    $lockers = Locker::all();
 
     // print header
     echo "locker_id,student_id,student_first_name<br>";
 
     foreach ($lockers as $locker) {
-        // FIXME 11
-        $student = $locker->___11___;
-        // FIXME 12-13
-        echo "$locker->id,{$student->___12___},{$student->___13___}<br>";
+        // FIXME 11 DONE
+        $student = $locker->student;
+        // FIXME 12-13 DONE
+        echo "$locker->id,{$student->id},{$student->first_name}<br>";
     }
 });
 
 $router->get('/reports/advisers', function () {
-    // FIXME 14
-    $advisers = Adviser::___14___();
+    // FIXME 14 DONE
+    $advisers = Adviser::all();
 
     // print header
     echo "adviser_id,adviser_first_name,adviser_last_name,student_id<br>";
 
     foreach ($advisers as $adviser) {
-        // FIXME 15
-        $students = $adviser->___15___;
+        // FIXME 15 DONE
+        $students = $adviser->students;
 
         foreach ($students as $student) {
-            // FIXME 16
-            echo "$adviser->id,$adviser->first_name,$adviser->last_name,$student->___16___<br>";
+            // FIXME 16 DONE
+            echo "$adviser->id,$adviser->first_name,$adviser->last_name,$student->id<br>";
         }
     }
 });

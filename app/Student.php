@@ -10,13 +10,13 @@ class Student extends Model
     
     public function locker()
     {
-        // FIXME 3
-        return $this->___3___('App\__?__');
+        // FIXME 3 DONE
+        return $this->hasOne('App\Locker');
     }
 
     public function adviser()
     {
-        // FIXME 4
-        return $this->___4___;
+        // FIXME 4 DONE
+        return $this->belongsTo('App\Adviser');
     }
 }
